@@ -53,7 +53,7 @@ public class SearchServlet extends HttpServlet{
 			System.out.println(sqlString);
 			List<QA> QAAll = qad.getQASearch(sqlString);
 			System.out.println(QAAll);
-//			request.setAttribute("QAAll", QAAll);
+//			request.setAttribute("QAAll", QAAll);   
 //			request.getRequestDispatcher("searchInfo.jsp").forward(request,response);//转发到成功页面
 			response.setCharacterEncoding("UTF-8");  
 			response.setContentType("application/json; charset=utf-8");  

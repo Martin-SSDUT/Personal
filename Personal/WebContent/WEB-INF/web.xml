@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Personal</display-name>
+  
+  <filter><!-- 过滤器配置 -->
+  		<filter-name>EncodingFilter</filter-name>
+  		<filter-class>com.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  				<filter-name>EncodingFilter</filter-name>
+  				<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet><!-- servlet类路径配置 -->
+	<servlet-name>LoginServlet</servlet-name>
+	<servlet-class>com.servlet.LoginServlet</servlet-class>  
+  </servlet>
+   <servlet><!-- servlet类路径配置 -->
+	<servlet-name>SearchServlet</servlet-name>
+	<servlet-class>com.servlet.SearchServlet</servlet-class>  
+  </servlet>
+    <servlet><!-- servlet类路径配置 -->
+	<servlet-name>WholeInfoServlet</servlet-name>
+	<servlet-class>com.servlet.WholeInfoServlet</servlet-class>  
+  </servlet>
+  
+  <servlet-mapping><!-- servlet类映射配置 -->
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping><!-- servlet类映射配置 -->
+  	<servlet-name>SearchServlet</servlet-name>
+  	<url-pattern>/SearchServlet</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping><!-- servlet类映射配置 -->
+  	<servlet-name>WholeInfoServlet</servlet-name>
+  	<url-pattern>/WholeInfoServlet</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+  <session-timeout>1</session-timeout>
+ </session-config>
+  
+  <welcome-file-list><!-- 默认首页地址 -->
+    <welcome-file>login.html</welcome-file>
+    <welcome-file>login.htm</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

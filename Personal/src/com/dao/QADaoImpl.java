@@ -9,19 +9,6 @@ import com.entity.QA;
 import com.util.DBconn;
 
 public class QADaoImpl implements QADao{
-		public boolean login(String name,String pwd) {
-			boolean flag = false;
-			String fixedName = "martin";
-			String fixedPassword = "123";
-			try {
-				if (fixedName.equals(name) && fixedPassword.equals(pwd)) {
-					flag = true;
-				}
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-			return flag;
-		}
 		public List<QA> getQAAll(){
 			List<QA> list = new ArrayList<QA>();
 			try {

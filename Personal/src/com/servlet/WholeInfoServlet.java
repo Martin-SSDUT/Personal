@@ -14,6 +14,10 @@ import com.dao.QADao;
 import com.dao.QADaoImpl;
 import com.entity.QA;
 
+import com.entity.Admin;
+import com.dao.AdminDao;
+import com.dao.AdminDaoImpl;
+
 public class WholeInfoServlet extends HttpServlet{
 		public void doGet(HttpServletRequest request, HttpServletResponse response)
 						throws ServletException, IOException{
@@ -21,12 +25,16 @@ public class WholeInfoServlet extends HttpServlet{
 		}
 		public void doPost(HttpServletRequest request, HttpServletResponse response)
 						throws ServletException, IOException{
-			
+			//获取session信息
 			HttpSession session = request.getSession();
 			String name = (String)session.getAttribute("loginName");
 			String pwd = (String)session.getAttribute("password");
-			QADao qad = new QADaoImpl();
-			if(qad.login(name, pwd)) {
+			//响应的相关设置
+			response.setCharacterEncoding("UTF-8");  
+			response.setContentType("application/json; charset=utf-8");
+			AdminDao admin = new AdminDaoImpl();
+			if(admin.login(name, pwd)) {
+				QADao qad = new QADaoImpl();
 				List<QA> QAAll = qad.getQAAll();
 				request.setAttribute("QAAll", QAAll);
 				request.getRequestDispatcher("wholeInfo.jsp").forward(request,response);//转发到全部信息页面

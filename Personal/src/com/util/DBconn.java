@@ -14,7 +14,7 @@ public class DBconn {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url,username,password);
 		}catch(Exception e) {
-			System.out.println("init [SQLÇı¶¯³ÌĞò³õÊ¼»¯Ê§°Ü£¡]");
+			System.out.println("æ•°æ®åº“è¿æ¥åˆå§‹åŒ–å¤±è´¥ï¼");
 			e.printStackTrace();
 		}
 	}
@@ -23,7 +23,7 @@ public class DBconn {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery(sql);
 		}catch(SQLException e) {
-			System.out.println("sqlÊı¾İ¿â²éÑ¯Òì³£");
+			System.out.println("sqlæŸ¥è¯¢å¤±è´¥ï¼");
 			e.printStackTrace();
 		}
 		return rs;
@@ -32,7 +32,7 @@ public class DBconn {
 		try {
 			conn.close();
 		}catch(SQLException e) {
-			System.out.println("sqlÊı¾İ¿â¹Ø±ÕÒì³£");
+			System.out.println("æ•°æ®åº“è¿æ¥å…³é—­å¤±è´¥ï¼");
 		}
 	}
 }

@@ -23,7 +23,7 @@ public class SearchServlet extends HttpServlet{
 		}
 		public void doPost(HttpServletRequest request, HttpServletResponse response)
 						throws ServletException, IOException{
-			String searchInfo = request.getParameter("searchInfo");// 得到jsp页面传过来的参数
+			String searchInfo = request.getParameter("searchInfo");//得到jsp页面传过来的参数
 			String questionType = request.getParameter("questionType");
 			String searchRange = request.getParameter("searchRange");
 			System.out.println("searchInfo   " + searchInfo);

@@ -21,26 +21,26 @@ public class LoginServlet extends HttpServlet{
 		}
 		public void doPost(HttpServletRequest request, HttpServletResponse response)
 						throws ServletException, IOException{
-			String name = request.getParameter("loginName");//µÃµ½jspÒ³Ãæ´«¹ıÀ´µÄ²ÎÊı
+			String name = request.getParameter("loginName");//å¾—åˆ°jspé¡µé¢ä¼ è¿‡æ¥çš„å‚æ•°
 			String pwd = request.getParameter("pwd");
 			
 			QADao qa = new QADaoImpl();
 			if(qa.login(name, pwd)) {
-//				request.setAttribute("loginName",name);//ÏòrequestÓòÖĞ·ÅÖÃĞÅÏ¢(¼üÖµ¶ÔµÄĞÎÊ½)
+//				request.setAttribute("loginName",name);//å‘requeståŸŸä¸­æ”¾ç½®ä¿¡æ¯(é”®å€¼å¯¹çš„å½¢å¼)
 //				request.setAttribute("password", pwd);
 				HttpSession session = request.getSession();
 				session.setAttribute("loginName", name);
 				session.setAttribute("password", pwd);
 				/*
-				 * ÉèÖÃsessionÓĞĞ§ÆÚ
-				 * ¸Ã·½Ê½Îªjava´úÂëÉèÖÃ£¬ÓÅÏÈ¼¶×î¸ß£¬µ¥Î»ÎªÃë£»
-				 * Ò²¿ÉÒÔÍ¨¹ıÅäÖÃxmlµÄ·½Ê½ÉèÖÃ£¬µ¥Î»Îª·ÖÖÓ
+				 * è®¾ç½®sessionæœ‰æ•ˆæœŸ
+				 * è¯¥æ–¹å¼ä¸ºjavaä»£ç è®¾ç½®ï¼Œä¼˜å…ˆçº§æœ€é«˜ï¼Œå•ä½ä¸ºç§’ï¼›
+				 * ä¹Ÿå¯ä»¥é€šè¿‡é…ç½®xmlçš„æ–¹å¼è®¾ç½®ï¼Œå•ä½ä¸ºåˆ†é’Ÿ
 				 */
 				request.getSession().setMaxInactiveInterval(300);
-				request.getRequestDispatcher("success.jsp").forward(request,response);//×ª·¢µ½³É¹¦Ò³Ãæ
+				request.getRequestDispatcher("success.jsp").forward(request,response);//è½¬å‘åˆ°æˆåŠŸé¡µé¢
 			}else {
-				request.setAttribute("loseInfo", "ÓÃ»§Ãû»òÃÜÂë´íÎó£¬µÇÂ¼Ê§°Ü£¡");
-				request.getRequestDispatcher("lose.jsp").forward(request,response);//×ª·¢µ½³É¹¦Ò³Ãæ
+				request.setAttribute("loseInfo", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼Œç™»å½•å¤±è´¥ï¼");
+				request.getRequestDispatcher("lose.jsp").forward(request,response);//è½¬å‘åˆ°å¤±è´¥é¡µé¢
 			}
 		}
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import com.entity.QA;
 
 public interface QADao {
-		public boolean login(String name,String pwd);//µÇÂ¼
-		public List<QA> getQAAll();//·µ»ØËùÓĞÎÊÌâ
-		public List<QA> getQASearch(String sqlString);//·µ»ØËùÓĞÎÊÌâ
+		public boolean login(String name,String pwd);//ç™»å½•
+		public List<QA> getQAAll();//è¿”å›æ‰€æœ‰é—®é¢˜
+		public List<QA> getQASearch(String sqlString);//è¿”å›æ‰€æœ‰é—®é¢˜
 }

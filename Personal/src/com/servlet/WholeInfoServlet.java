@@ -29,10 +29,10 @@ public class WholeInfoServlet extends HttpServlet{
 			if(qad.login(name, pwd)) {
 				List<QA> QAAll = qad.getQAAll();
 				request.setAttribute("QAAll", QAAll);
-				request.getRequestDispatcher("wholeInfo.jsp").forward(request,response);//×ª·¢µ½³É¹¦Ò³Ãæ
+				request.getRequestDispatcher("wholeInfo.jsp").forward(request,response);//è½¬å‘åˆ°å…¨éƒ¨ä¿¡æ¯é¡µé¢
 			}else {
-				request.setAttribute("loseInfo", "Çë±£³ÖµÇÂ¼×´Ì¬²éÑ¯´ËÒ³Ãæ£¡");
-				request.getRequestDispatcher("lose.jsp").forward(request,response);//×ª·¢µ½³É¹¦Ò³Ãæ
+				request.setAttribute("loseInfo", "è¯·ä¿æŒç™»å½•çŠ¶æ€æŸ¥è¯¢æ­¤é¡µé¢ï¼");
+				request.getRequestDispatcher("lose.jsp").forward(request,response);//è½¬å‘åˆ°å¤±è´¥é¡µé¢
 			}
 		}
 }

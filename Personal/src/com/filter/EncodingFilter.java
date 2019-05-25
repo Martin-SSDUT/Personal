@@ -12,10 +12,10 @@ import javax.servlet.ServletResponse;
 
 public class EncodingFilter implements Filter{
 	public EncodingFilter() {
-		System.out.println("¹ıÂËÆ÷¹¹Ôì");
+		System.out.println("è¿‡æ»¤å™¨æ„é€ ");
 	}
 	public void destroy() {
-		System.out.println("¹ıÂËÆ÷Ïú»Ù");
+		System.out.println("è¿‡æ»¤å™¨é”€æ¯");
 	}
 	public void doFilter(ServletRequest request,ServletResponse response,FilterChain chain) throws IOException, ServletException{
 		request.setCharacterEncoding("utf-8");
@@ -23,6 +23,6 @@ public class EncodingFilter implements Filter{
 		chain.doFilter(request, response);
 	}
 	public void init(FilterConfig arg0) throws ServletException{
-		System.out.println("¹ıÂËÆ÷³õÊ¼»¯");
+		System.out.println("è¿‡æ»¤å™¨åˆå§‹åŒ–");
 	}
 }

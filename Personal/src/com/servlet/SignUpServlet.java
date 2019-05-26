@@ -33,15 +33,21 @@ public class SignUpServlet extends HttpServlet{
 			response.setCharacterEncoding("UTF-8");  
 			response.setContentType("application/json; charset=utf-8");
 			AdminDao admin = new AdminDaoImpl();
-			if(!admin.isExist(name, pwd)) {
-				if(admin.register(name, pwd)) {
-					System.out.println("注册成功！");
-					String info = "['success']";
+			if (!name.isEmpty() && !pwd.isEmpty()) {
+				if(!admin.isExist(name, pwd)) {
+					if(admin.register(name, pwd)) {
+						System.out.println("注册成功！");
+						String info = "['success']";
+						response.getWriter().write(JSONArray.fromObject(info).toString()); 
+					}
+				}else {
+					String info = "['lose']";
 					response.getWriter().write(JSONArray.fromObject(info).toString()); 
 				}
 			}else {
-				String info = "['lose']";
+				String info = "['info empty']";
 				response.getWriter().write(JSONArray.fromObject(info).toString()); 
 			}
+			
 		}
 }

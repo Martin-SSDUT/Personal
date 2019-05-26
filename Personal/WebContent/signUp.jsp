@@ -72,6 +72,13 @@
 
 <script src="javascript/jquery-1.11.1.min.js"></script>
 <script type="text/JavaScript" charset="utf-8">
+	$(function() {
+		window.scrollTo({ 
+		    top: 100, 
+		    left: 412,
+		    behavior: "smooth" 
+		});
+	});
 	function keyup_submit(e) {
 		var event = window.event || e;
 		if (event.keyCode == 13) {
@@ -95,10 +102,15 @@
 					setTimeout(function() {
 						window.location.href = "login.jsp";
 			        },  2000);
-				} else {
+				} else if(data == "lose") {
 					console.log("register lose");
 					var info = document.getElementById("info");
 					info.innerHTML = "用户名已存在";
+					$("#resultModal").modal("show");
+				} else if(data == "info empty"){
+					console.log("register info is empty");
+					var info = document.getElementById("info");
+					info.innerHTML = "用户名和密码不能为空";
 					$("#resultModal").modal("show");
 				}
 			}

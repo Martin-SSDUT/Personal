@@ -124,6 +124,11 @@
 <script src="javascript/jquery-1.11.1.min.js"></script>
 	<script type="text/JavaScript" charset="utf-8" >
 		$(function() {
+			window.scrollTo({ 
+			    top: 100, 
+			    left: 412,
+			    behavior: "smooth" 
+			});
 			$("#questionType").val("不限");
 			$("#searchRange").val("不限");
 		});

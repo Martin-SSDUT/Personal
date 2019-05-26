@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=0.5,target-densitydpi=device-dpi,minimum-scale=1,maximum-scale=1.5,user-scalable=1" />
 <title>登录失败</title>
 </head>
 <body>

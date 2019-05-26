@@ -7,6 +7,7 @@ public class DBconn {
 	static String username = "root";
 	static String password = "";
 	static Connection conn = null;
+	static Statement statement = null;
 	static ResultSet rs = null;
 	static PreparedStatement ps = null;
 	public static void init() {
@@ -24,6 +25,16 @@ public class DBconn {
 			rs = ps.executeQuery(sql);
 		}catch(SQLException e) {
 			System.out.println("sql查询失败！");
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	public static ResultSet insertSql(String sql) {
+		try {
+			statement = conn.createStatement();
+			statement.execute(sql);
+		}catch(SQLException e) {
+			System.out.println("sql插入失败！");
 			e.printStackTrace();
 		}
 		return rs;

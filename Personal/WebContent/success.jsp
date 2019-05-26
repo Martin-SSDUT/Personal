@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width,initial-scale=0.5,target-densitydpi=device-dpi,minimum-scale=1,maximum-scale=1.5,user-scalable=1" />
 <link rel="stylesheet" href="static/css/bootstrap.css">
 <base href="<%=basePath%>">
 <title>登录成功</title>

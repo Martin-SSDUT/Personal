@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=0.5,target-densitydpi=device-dpi,minimum-scale=1,maximum-scale=1.5,user-scalable=1" />
 <meta name="renderer" content="webkit">
 <base href="<%=basePath%>">
 <title>搜索题目</title>

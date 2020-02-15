@@ -29,5 +29,17 @@
 		ImageIO.write(image, "jpg", new File("savedImage.jpg"));
 		return image;
 	}
+
+  	/**
+	 * serialize the img object.
+	 */
+	public static void preprocessImg(byte[] img, ParseException e) {
+		if (e == null) {
+			Bitmap b = byteArrayToBitmap(img);
+			callback.onImageReceived(null, b);
+		} else {
+			callback.onImageReceived(e, null);
+		}
+	}
   
   
